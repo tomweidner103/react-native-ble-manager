@@ -58,7 +58,7 @@ public class Peripheral extends BluetoothGattCallback {
 	private Callback registerNotifyCallback;
 	private Callback requestMTUCallback;
 
-	private List<byte[]> writeQueue = new ArrayList<>();
+	public List<byte[]> writeQueue = new ArrayList<>();
 
 	public Peripheral(BluetoothDevice device, int advertisingRSSI, byte[] scanRecord, ReactContext reactContext) {
 		this.device = device;

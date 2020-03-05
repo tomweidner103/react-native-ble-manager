@@ -290,6 +290,18 @@ class BleManager extends ReactContextBaseJavaModule implements ActivityEventList
 			callback.invoke("Peripheral not found");
 	}
 
+	@ReactMethod
+	public void resetQueue(String deviceUUID, Callback callback){
+		Log.d(LOG_TAG, "resetting Queue");
+
+		Peripheral peripheral = peripherals.get(deviceUUID);
+		if(peripheral != null){
+			peripheral.writeQueue.clear()
+		}else{
+			callback.invoke("No device found to clear the queue for you")
+		}
+
+	}
 
 	@ReactMethod
 	public void write(String deviceUUID, String serviceUUID, String characteristicUUID, ReadableArray message, Integer maxByteSize, Callback callback) {

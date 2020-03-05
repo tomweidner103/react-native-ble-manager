@@ -20,6 +20,18 @@ class BleManager  {
     });
   }
 
+  resetQueue(peripheralId){
+    return new Promise((fulfill, reject) => {
+      bleManager.resetQueue(peripheralId, (error, data) => {
+        if(error){
+          reject(error)
+        }else{
+          fulfill(data)
+        }
+      })
+    })
+  }
+
   readRSSI(peripheralId) {
     return new Promise((fulfill, reject) => {
       bleManager.readRSSI(peripheralId, (error, rssi) => {
