@@ -82,6 +82,22 @@ BleManager.start({showAlert: false})
   });
 
 ```
+### resetQueue(peripheralUUID)
+resets the queue, possibly due to a disconnect state
+Returns a `Promise` object.
+
+__Arguments__
+- `peripheralUUID` - `string`
+
+__Examples__
+```js
+BleManager.resetQueue(peripheralUUID)
+  .then(() => {
+    // Success code
+    console.log("queue erased");
+  });
+
+```
 
 ### scan(serviceUUIDs, seconds, allowDuplicates, scanningOptions)
 Scan for availables peripherals.
