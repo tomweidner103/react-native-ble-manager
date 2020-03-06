@@ -296,9 +296,9 @@ class BleManager extends ReactContextBaseJavaModule implements ActivityEventList
 
 		Peripheral peripheral = peripherals.get(deviceUUID);
 		if(peripheral != null){
-			peripheral.writeQueue.clear()
+			peripheral.writeQueue.clear();
 		}else{
-			callback.invoke("No device found to clear the queue for you")
+			callback.invoke("No device found to clear the queue for you");
 		}
 
 	}
